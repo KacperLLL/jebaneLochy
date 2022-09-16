@@ -61,4 +61,10 @@ public class sceneChange : MonoBehaviour
         }
 
     }
+
+    public void q()
+    {
+        Application.Quit();
+        Debug.Log("log");
+    }
 }
