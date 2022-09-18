@@ -12,7 +12,7 @@ public class sceneChange : MonoBehaviour
     public GameObject saves;
     public TextMeshProUGUI plt, nGt, setT, autT;
 
-    bool save = false;
+    bool save = true;
 
 
     public void newGame()
