@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-
+using System.IO;
 
 public class sceneChange : MonoBehaviour
 {
@@ -53,6 +53,10 @@ public class sceneChange : MonoBehaviour
 
     public void Start()
     {
+        string path = "save.txt";
+
+        save = File.Exists(path);
+
         //sprawdzenie zapisow
         if(!save)
         {
