@@ -12,6 +12,8 @@ public class sceneChange : MonoBehaviour
     public GameObject saves;
     public TextMeshProUGUI plt, nGt, setT, autT;
 
+    public TextMeshProUGUI s1, s2, s3, s4, s5, s6;
+
     bool save = true;
 
 
@@ -62,6 +64,11 @@ public class sceneChange : MonoBehaviour
         {
             pl.enabled = false;
             plt.color = new Color(0f, 0f, 0f, 0.2f);
+        }
+        
+        else
+        {
+
         }
 
     }
