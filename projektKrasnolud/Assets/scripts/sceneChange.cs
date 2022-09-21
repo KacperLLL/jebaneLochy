@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,22 +10,15 @@ public class sceneChange : MonoBehaviour
     public GameObject saves;
     public GameObject settings;
     public TextMeshProUGUI plt, nGt, setT, autT;
-
     public TextMeshProUGUI s1, s2, s3, s4, s5, s6;
     public zmienne zm;
-
     string path = "save.txt";
-
-
     bool save = true;
-
-
+    
     public void newGame()
     {
-        if(!File.Exists(path))
-        {
-            using (StreamWriter sw = File.CreateText(path))
-            {
+        if(!save){
+            using (StreamWriter sw = File.CreateText(path)){
                 sw.WriteLine("empty");
                 sw.WriteLine("#");
                 sw.WriteLine("empty");
@@ -39,55 +30,34 @@ public class sceneChange : MonoBehaviour
                 sw.WriteLine("empty");
                 sw.WriteLine("#");
                 sw.WriteLine("empty");
-
             }
         }
-
         SceneManager.LoadScene("Scenes/game", LoadSceneMode.Single);
-
     }
 
     public void setBut()
     {
-        pl.enabled = false;
-        plt.color = new Color(1f, 1f, 1f, 0.2f);
-        nG.enabled = false;
-        nGt.color = new Color(1f, 1f, 1f, 0.2f);
-        set.enabled = false;
-        setT.color = new Color(1f, 1f, 1f, 0.2f);
-        aut.enabled = false;
-        autT.color = new Color(1f, 1f, 1f, 0.2f);
+        aut.enabled = set.enabled = nG.enabled = pl.enabled = false;
+        autT.color = setT.color = nGt.color =plt.color = new Color(1f, 1f, 1f, 0.2f);
         settings.SetActive(true);
     }
 
     public void back()
     {
-        pl.enabled = save; 
-        if(save)
-        {
+        if(save){
+            pl.enabled = true; 
             plt.color = new Color(1f, 1f, 1f, 1f);
         }
-
-        nG.enabled = true;
-        nGt.color = new Color(1f, 1f, 1f, 1f);
-        set.enabled = true;
-        setT.color = new Color(1f, 1f, 1f, 1f);
-        aut.enabled = true;
-        autT.color = new Color(1f, 1f, 1f, 1f);
+        aut.enabled = set.enabled = nG.enabled = true;
+        autT.color = setT.color = nGt.color = new Color(1f, 1f, 1f, 1f);
         saves.SetActive(false);
         settings.SetActive(false);
     }
 
     public void play()
     {
-        pl.enabled = false;
-        plt.color = new Color(1f, 1f, 1f, 0.2f);
-        nG.enabled = false;
-        nGt.color = new Color(1f, 1f, 1f, 0.2f);
-        set.enabled = false;
-        setT.color = new Color(1f, 1f, 1f, 0.2f);
-        aut.enabled = false;
-        autT.color = new Color(1f, 1f, 1f, 0.2f);
+        aut.enabled = set.enabled = nG.enabled = pl.enabled = false;
+        autT.color = setT.color = nGt.color = plt.color = new Color(1f, 1f, 1f, 0.2f);
         saves.SetActive(true);
     }
 
@@ -101,21 +71,18 @@ public class sceneChange : MonoBehaviour
         //protokol zapisu danych w pliku zapisu 1. nazwa zapisu 2. data zapisu 3. nazwa postaci
 
         save = File.Exists(path);
-
         //sprawdzenie zapisow
         if(!save)
         {
             pl.enabled = false;
             plt.color = new Color(1f, 1f, 1f, 0.2f);
         }
-
-        
+       
         else
         {
             using (StreamReader sr = File.OpenText(path))
             {
                 string s;
-                int al = 1; //aktualna linia zczytywana
                 int sav1 = 1;
 
 
@@ -149,14 +116,11 @@ public class sceneChange : MonoBehaviour
                         {
                             zm.save6.Add(s);
                         }
-
-                    al++;
                 }
 
             }
 
-            if (zm.save1[0] == "empty")
-            {
+            if (zm.save1[0] == "empty"){
                 pl.enabled = false;
                 plt.color = new Color(0f, 0f, 0f, 0.2f);
             }
