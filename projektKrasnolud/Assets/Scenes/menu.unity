@@ -1150,6 +1150,7 @@ GameObject:
   - component: {fileID: 742121243}
   - component: {fileID: 742121242}
   - component: {fileID: 742121244}
+  - component: {fileID: 742121245}
   m_Layer: 0
   m_Name: zmienneglob
   m_TagString: Untagged
@@ -1200,6 +1201,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7dbe619da8303b489fd22952e907dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &742121245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742121241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6fcc8fd1234fde40a6a47386d2eb262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &751967379
