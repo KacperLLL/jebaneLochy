@@ -13,6 +13,10 @@ public class sceneChange : MonoBehaviour
     public TextMeshProUGUI s1, s2, s3, s4, s5, s6;
     public zmienne zm;
     
+    public void newGame()
+    {
+        SceneManager.LoadScene("Scenes/game");
+    }
 
     public void setBut()
     {

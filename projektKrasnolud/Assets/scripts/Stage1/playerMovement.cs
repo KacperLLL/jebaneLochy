@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    bool isGrounded = false, crouch = false, wslizg= false;
+    bool isGrounded = false, crouch = false;
     float  h;
     public float speed, jumpPower;
     public Rigidbody2D rigidbody;
@@ -24,34 +24,19 @@ public class playerMovement : MonoBehaviour
             rigidbody.AddForce(transform.up * jumpPower);
         }
 
-        else if (Input.GetKey(KeyCode.LeftControl)&&(h==0)) 
+        else if (Input.GetKey(KeyCode.LeftControl)) 
         {
-            crouch = true;
             gameObject.transform.localScale = new Vector3(transform.localScale.x, 0.5f, transform.localScale.z);
         }
-        else if(Input.GetKey(KeyCode.LeftControl)&&(h!=0))
-        {
-            wslizg = true;
-            gameObject.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 90f, transform.rotation.w);
-            rigidbody.AddForce(Vector2.right * 50f);
-        }
 
-        if(!Input.GetKey(KeyCode.LeftControl))
+        if (!Input.GetKey(KeyCode.LeftControl))
         {
-            crouch = false;
             gameObject.transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
         }
 
-        if(wslizg)
-        {
-            StartCoroutine(wslizgg());
-        }
-
-        if(!wslizg)
-        {
             gameObject.transform.position = new Vector2(transform.position.x + (h * speed), transform.position.y);
             gameObject.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0f, transform.rotation.w);
-        }
+
     }
 
 
@@ -64,10 +49,4 @@ public class playerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator wslizgg()
-    {
-        yield return new WaitForSeconds(2.5f);
-        gameObject.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0f, transform.rotation.w);
-        wslizg = false;
-    }
 }
