@@ -1652,8 +1652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2c4b35798f9cc40a64ddb282facef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.055
-  jumpPower: 800
+  speed: 0.03
+  jumpPower: 500
   rigidbody: {fileID: 636127179}
   camera: {fileID: 1305059408}
 --- !u!1 &770780794
