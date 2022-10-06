@@ -15,6 +15,8 @@ public class saveHandller : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         lista = new sList();
         path = Application.dataPath + "/saves/saveList.json";
 
@@ -72,6 +74,9 @@ public class saveHandller : MonoBehaviour
 
     private class Saves
     {
-        public string name;
+        public string s_poziom;
+        public string s_name;
+        public string s_lvl;
+        public string s_money;
     }
 }

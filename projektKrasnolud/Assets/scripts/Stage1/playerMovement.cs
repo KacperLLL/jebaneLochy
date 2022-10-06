@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    bool isGrounded = false, crouch = false;
+    bool isGrounded = false;
     float  h;
     public float speed, jumpPower;
     public Rigidbody2D rigidbody;
@@ -34,8 +34,15 @@ public class playerMovement : MonoBehaviour
             gameObject.transform.localScale = new Vector3(transform.localScale.x, 1f, transform.localScale.z);
         }
 
-            gameObject.transform.position = new Vector2(transform.position.x + (h * speed), transform.position.y);
-            gameObject.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0f, transform.rotation.w);
+        //gameObject.transform.position = new Vector2(transform.position.x + (h * speed), transform.position.y);
+
+        //Vector3 nowaOs = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
+        //rigidbody.MovePosition(transform.position + nowaOs * Time.deltaTime * speed);
+
+
+        rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, rigidbody.velocity.y);
+
+        gameObject.transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0f, transform.rotation.w);
 
     }
 

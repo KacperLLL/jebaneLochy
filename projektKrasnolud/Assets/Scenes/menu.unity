@@ -1148,7 +1148,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742121243}
-  - component: {fileID: 742121242}
   - component: {fileID: 742121245}
   m_Layer: 0
   m_Name: zmienneglob
@@ -1157,24 +1156,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &742121242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742121241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fc03e8921e590488922fa79ba21e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  save1: []
-  save2: []
-  save3: []
-  save4: []
-  save5: []
-  save6: []
 --- !u!4 &742121243
 Transform:
   m_ObjectHideFlags: 0
@@ -2152,7 +2133,6 @@ MonoBehaviour:
   s4: {fileID: 2051998663}
   s5: {fileID: 1068520205}
   s6: {fileID: 1499951866}
-  zm: {fileID: 742121242}
 --- !u!4 &1259654875
 Transform:
   m_ObjectHideFlags: 0
