@@ -11,6 +11,7 @@ public class saveHandller : MonoBehaviour
     public TextMeshProUGUI plt;
     string path;
     sList lista = new sList();
+    Saves save = new Saves();
     public TextMeshProUGUI s1, s2, s3, s4, s5, s6;
 
     void Start()
@@ -49,7 +50,28 @@ public class saveHandller : MonoBehaviour
         }
 
     }
-    
+
+    public void includeSave(int w)
+    {
+        switch (w)
+        {
+            case 1:
+                {
+                    string s_path = Application.dataPath + "/saves/save1.json";
+                    if (File.Exists(s_path))
+                    {
+                        save = JsonUtility.FromJson<Saves>(File.ReadAllText(s_path));
+                    }
+                    break;
+                }
+
+            case 2:
+                {
+                    break;
+                }
+        }
+    }
+
     private class sList
     {
         public int sInt;
